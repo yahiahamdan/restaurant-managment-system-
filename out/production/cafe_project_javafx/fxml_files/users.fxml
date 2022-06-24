@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="788.0" prefWidth="979.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.users">
+   <children>
+      <TableView layoutX="477.0" layoutY="90.0" prefHeight="355.0" prefWidth="452.0" stylesheets="@../styles/styling/tableview.css">
+        <columns>
+          <TableColumn prefWidth="86.0" text="id" />
+          <TableColumn prefWidth="123.0" text="username" />
+            <TableColumn prefWidth="242.0" text="password" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </TableView>
+      <JFXTextField fx:id="usernametext" focusColor="#ff7700" labelFloat="true" layoutX="119.0" layoutY="186.0" promptText="username" />
+      <JFXTextField fx:id="passwordtext" focusColor="#ff7700" labelFloat="true" layoutX="119.0" layoutY="302.0" promptText="password" unFocusColor="BLACK" />
+      <Label layoutX="19.0" layoutY="197.0" prefHeight="31.0" prefWidth="78.0" text="username" textFill="#f50909">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="318.0" prefHeight="31.0" prefWidth="78.0" text="password" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="27.0" layoutY="420.0" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #2E8B57; -fx-background-radius: 30;" text=" add  " textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </JFXButton>
+      <JFXButton layoutX="243.0" layoutY="420.0" prefHeight="64.0" prefWidth="140.0" style="-fx-background-color: red; -fx-background-radius: 30;" text="edit" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </JFXButton>
+      <JFXTextField fx:id="search_text" labelFloat="true" layoutX="141.0" layoutY="36.0" prefHeight="54.0" prefWidth="323.0" promptText="search _here" />
+   </children>
+</AnchorPane>

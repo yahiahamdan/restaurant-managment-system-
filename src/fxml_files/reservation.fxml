@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="945.0" prefWidth="1034.0" style="-fx-background-color: white; -fx-background-radius: 50;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="338.0" layoutY="132.0" prefHeight="729.0" prefWidth="691.0" stylesheets="@../styles/styling/tableview.css">
+        <columns>
+          <TableColumn prefWidth="98.0" text="booking_no" />
+          <TableColumn prefWidth="144.0" text="name" />
+            <TableColumn minWidth="0.0" prefWidth="95.0" text="phone" />
+            <TableColumn minWidth="0.0" prefWidth="107.0" text="table_no" />
+            <TableColumn minWidth="0.0" prefWidth="107.0" text="date" />
+            <TableColumn minWidth="0.0" prefWidth="107.0" text="time" />
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <JFXTextField fx:id="searchforbooking" labelFloat="true" layoutX="278.0" layoutY="60.0" prefHeight="31.0" prefWidth="326.0" promptText="search for reservation" unFocusColor="BLACK" />
+      <Label layoutX="191.0" layoutY="60.0" style="-fx-inner-text-color: #00FA9A;" text="search" textFill="#ff0909">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="2.0" layoutY="589.0" prefHeight="156.0" prefWidth="379.0" spacing="50.0">
+         <children>
+            <JFXButton fx:id="addbutton" prefHeight="69.0" prefWidth="106.0" style="-fx-background-color: #191970; -fx-background-radius: 20;" text="add" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" prefHeight="67.0" prefWidth="112.0" style="-fx-background-color: #FF0000; -fx-background-radius: 20;" text="edit" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+      <FontAwesomeIconView layoutX="-119.0" layoutY="508.0" />
+      <FontAwesomeIconView fill="#2dffea" focusTraversable="true" fontSmoothingType="LCD" glyphName="USER_PLUS" layoutX="81.0" layoutY="151.0" size="30" stroke="SNOW" style="-fx-background-fill: white;" text="" wrappingWidth="29.571428298950195">
+         <effect>
+            <ColorAdjust brightness="1.0" contrast="-1.0" hue="0.2" saturation="1.0" />
+         </effect>
+      </FontAwesomeIconView>
+      <FontAwesomeIconView fill="#009688" glyphName="PHONE" layoutX="69.0" layoutY="385.0" size="35" />
+      <JFXTextField fx:id="nametextreservation" labelFloat="true" layoutX="111.0" layoutY="268.0" promptText="name" />
+      <JFXTextField fx:id="phonetextreservation" labelFloat="true" layoutX="111.0" layoutY="347.0" prefHeight="31.0" prefWidth="177.0" promptText="phone" />
+      <JFXComboBox fx:id="table_combo" labelFloat="true" layoutX="118.0" layoutY="437.0" prefHeight="31.0" prefWidth="169.0" promptText="table_no" />
+      <JFXDatePicker fx:id="date_picker" layoutX="49.0" layoutY="512.0" prefHeight="31.0" prefWidth="113.0" promptText="date" />
+      <JFXTimePicker fx:id="time_picker" layoutX="222.0" layoutY="512.0" prefHeight="31.0" prefWidth="113.0" promptText="time" />
+      <FontAwesomeIconView fill="#009688" glyphName="EYE" layoutX="58.0" layoutY="305.0" size="35" />
+      <FontAwesomeIconView fill="#009688" glyphName="WHEELCHAIR" layoutX="65.0" layoutY="462.0" size="35" />
+   </children>
+</AnchorPane>

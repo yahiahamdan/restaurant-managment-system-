@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="988.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.category">
+   <children>
+      <TableView fx:id="categorytable" layoutX="422.0" layoutY="104.0" onMouseClicked="#getindex" prefHeight="538.0" prefWidth="532.0" stylesheets="@../styles/styling/tableview.css">
+        <columns>
+          <TableColumn fx:id="idcol" prefWidth="85.0" styleClass="tableview" text="id" />
+          <TableColumn fx:id="namecol" prefWidth="446.0" text="name" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+         <contextMenu>
+            <ContextMenu id="delete" fx:id="delete" style="-fx-background-color: red; -fx-text-inner-color: white;">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#delete" text="delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <JFXTextField fx:id="categorytext" focusColor="#000033" labelFloat="true" layoutX="57.0" layoutY="243.0" prefHeight="77.0" prefWidth="345.0" promptText="category name" unFocusColor="#08ffea" />
+      <JFXTextField fx:id="categorysearch" focusColor="#000033" labelFloat="true" layoutX="51.0" layoutY="153.0" onAction="#category_filter" prefHeight="31.0" prefWidth="345.0" promptText="search for category" style="-fx-text-inner-color: black;" unFocusColor="#000033">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <HBox alignment="CENTER" layoutX="4.0" layoutY="437.0" prefHeight="161.0" prefWidth="412.0" spacing="30.0">
+         <children>
+            <JFXButton fx:id="addcategory" onAction="#addtable" prefHeight="77.0" prefWidth="139.0" ripplerFill="WHITE" style="-fx-background-color: #2E8B57; -fx-background-radius: 50;" text="add" textFill="WHITE" />
+            <JFXButton fx:id="editname" alignment="CENTER" onAction="#edittable" prefHeight="77.0" prefWidth="144.0" ripplerFill="#f5f5f5" style="-fx-background-color: #4682B4; -fx-background-radius: 50;" text="edit" textFill="WHITE" />
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="Mainmenu" layoutX="57.0" layoutY="37.0" onMouseClicked="#go_to_menu" text="MainMenu">
+         <graphic>
+            <FontAwesomeIconView fill="#08ffea" glyphName="HOME" size="30" />
+         </graphic>
+         <font>
+            <Font size="21.0" />
+         </font>
+         <effect>
+            <Lighting bumpInput="$null">
+               
+            </Lighting>
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

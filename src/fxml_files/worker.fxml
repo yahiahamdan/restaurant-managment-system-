@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.worker">
+   <children>
+      <AnchorPane layoutX="2.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="978.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+         <children>
+            <TableView layoutX="303.0" layoutY="124.0" prefHeight="656.0" prefWidth="669.0" stylesheets="@../styles/styling/tableview.css">
+               <columns>
+                  <TableColumn prefWidth="67.0" text="id" />
+                  <TableColumn prefWidth="140.0" text="name" />
+                  <TableColumn minWidth="0.0" prefWidth="130.0" text="phone" />
+                  <TableColumn minWidth="0.0" prefWidth="107.0" text="salary" />
+                  <TableColumn minWidth="0.0" prefWidth="107.0" text="dateofbegin" />
+                  <TableColumn minWidth="0.0" prefWidth="107.0" text="position" />
+               </columns>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="delete" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+            <JFXTextField fx:id="searchforworkers" labelFloat="true" layoutX="278.0" layoutY="60.0" prefHeight="31.0" prefWidth="326.0" promptText="find by anything you want " unFocusColor="BLACK" />
+            <Label layoutX="191.0" layoutY="60.0" style="-fx-inner-text-color: #00FA9A;" text="workers " textFill="#3ed780">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView layoutX="-119.0" layoutY="508.0" />
+            <FontAwesomeIconView fill="#2dffea" focusTraversable="true" fontSmoothingType="LCD" glyphName="USER_PLUS" layoutX="81.0" layoutY="151.0" size="30" stroke="SNOW" style="-fx-background-fill: white;" text="" wrappingWidth="29.571428298950195">
+               <effect>
+                  <ColorAdjust brightness="1.0" contrast="-1.0" hue="0.2" saturation="1.0" />
+               </effect>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#3007ff" glyphName="PHONE" layoutX="24.0" layoutY="277.0" size="30" />
+            <JFXTextField fx:id="nametextrworkers" labelFloat="true" layoutX="69.0" layoutY="195.0" promptText="name" />
+            <JFXTextField fx:id="phonetextworkers" labelFloat="true" layoutX="65.0" layoutY="259.0" prefHeight="31.0" prefWidth="177.0" promptText="phone" />
+            <JFXComboBox fx:id="position_combo" labelFloat="true" layoutX="69.0" layoutY="327.0" prefHeight="31.0" prefWidth="169.0" promptText="position" />
+            <JFXDatePicker fx:id="date_picker" defaultColor="#3007ff" layoutX="69.0" layoutY="407.0" prefHeight="31.0" prefWidth="113.0" promptText="dateofbegin" />
+            <FontAwesomeIconView fill="#3007ff" glyphName="STREET_VIEW" layoutX="23.0" layoutY="212.0" size="30" />
+            <FontAwesomeIconView fill="#3007ff" glyphName="HAND_SPOCK_ALT" layoutX="24.0" layoutY="364.0" size="25" />
+            <JFXButton fx:id="addbutton" layoutX="25.0" layoutY="566.0" onAction="#addtotable" prefHeight="56.0" prefWidth="103.0" style="-fx-background-color: orange; -fx-background-radius: 0;" text="add" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </JFXButton>
+            <JFXButton alignment="CENTER" layoutX="151.0" layoutY="566.0" onAction="#edittable" prefHeight="56.0" prefWidth="113.0" style="-fx-background-color: #008080; -fx-background-radius: 0;" text="edit" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="salary" labelFloat="true" layoutX="65.0" layoutY="482.0" prefHeight="31.0" prefWidth="177.0" promptText="salary" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

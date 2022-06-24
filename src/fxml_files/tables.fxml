@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="792.0" prefWidth="988.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.tablecontroller">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="906.0" prefWidth="1193.0" style="-fx-background-color: white;">
+         <children>
+            <TableView fx:id="table_tableview" layoutX="422.0" layoutY="104.0" onMouseClicked="#getindex" prefHeight="538.0" prefWidth="532.0" stylesheets="@../styles/styling/tableview.css">
+               <columns>
+                  <TableColumn fx:id="idcol" prefWidth="85.0" styleClass="tableview" text="id" />
+                  <TableColumn fx:id="tablenamecol" prefWidth="216.0" text="table_name" />
+                  <TableColumn fx:id="tablecapacitycol" prefWidth="216.0" text="capacity" />
+               </columns>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <contextMenu>
+                  <ContextMenu id="delete" style="-fx-background-color: red; -fx-text-inner-color: white;">
+                     <items>
+                        <MenuItem fx:id="deleteoption" mnemonicParsing="false" onAction="#delete" text="delete" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+            <JFXTextField fx:id="tableanametext" focusColor="#000033" labelFloat="true" layoutX="14.0" layoutY="159.0" onKeyPressed="#keycode" prefHeight="77.0" prefWidth="280.0" promptText="table name" unFocusColor="BLACK" />
+            <JFXTextField fx:id="tablecapacity" focusColor="#000033" labelFloat="true" layoutX="12.0" layoutY="328.0" prefHeight="31.0" prefWidth="345.0" promptText="capacity" style="-fx-text-inner-color: black;" unFocusColor="#000033">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXTextField>
+            <HBox alignment="CENTER" layoutX="4.0" layoutY="437.0" prefHeight="161.0" prefWidth="412.0" spacing="30.0">
+               <children>
+                  <JFXButton fx:id="addtable" onAction="#addtotable" prefHeight="77.0" prefWidth="139.0" ripplerFill="WHITE" style="-fx-background-color: #2E8B57; -fx-background-radius: 50;" text="add" textFill="WHITE" />
+                  <JFXButton fx:id="edittable" alignment="CENTER" onAction="#edittablename" prefHeight="77.0" prefWidth="144.0" ripplerFill="#f5f5f5" style="-fx-background-color: #4682B4; -fx-background-radius: 50;" text="edit" textFill="WHITE" />
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+            </HBox>
+            <Label layoutX="45.0" layoutY="30.0" onMouseClicked="#go_to_mainmenu" prefHeight="41.0" prefWidth="139.0" text="MainMenu">
+               <graphic>
+                  <FontAwesomeIconView fill="#08ffea" glyphName="HOME" size="25" />
+               </graphic>
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                     </light>
+                  </Lighting>
+               </effect>
+            </Label>
+            <JFXTextField fx:id="filteredtext" focusColor="#000033" labelFloat="true" layoutX="317.0" layoutY="38.0" onAction="#filtertable" prefHeight="41.0" prefWidth="355.0" promptText="search for table" unFocusColor="BLACK" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

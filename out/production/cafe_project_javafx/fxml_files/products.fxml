@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.products">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="978.0" style="-fx-background-color: white; -fx-background-radius: 50;">
+         <children>
+            <TableView fx:id="productstable" layoutX="436.0" layoutY="120.0" onMouseClicked="#getindex" prefHeight="660.0" prefWidth="536.0" stylesheets="@../styles/styling/tableview.css">
+               <columns>
+                  <TableColumn fx:id="idcol" prefWidth="98.0" text="product_id" />
+                  <TableColumn fx:id="namecol" prefWidth="170.0" text="name" />
+                  <TableColumn fx:id="pricecol" minWidth="0.0" prefWidth="99.0" text="price" />
+                  <TableColumn fx:id="categorycol" minWidth="0.0" prefWidth="153.0" text="category" />
+               </columns>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="delete" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+            <JFXTextField fx:id="filterproducts" labelFloat="true" layoutX="278.0" layoutY="60.0" prefHeight="31.0" prefWidth="326.0" promptText="search for products" unFocusColor="BLACK" />
+            <Label layoutX="191.0" layoutY="60.0" style="-fx-inner-text-color: #00FA9A;" text="search" textFill="#1a00ff">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" layoutX="-11.0" layoutY="474.0" prefHeight="156.0" prefWidth="379.0" spacing="50.0">
+               <children>
+                  <JFXButton fx:id="addbutton" onAction="#addtable" prefHeight="90.0" prefWidth="116.0" style="-fx-background-color: RED; -fx-background-radius: 100;" text="add" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.7961165048543689">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="editbutton" onAction="#edittable" prefHeight="90.0" prefWidth="116.0" style="-fx-background-color: #ADD8E6; -fx-background-radius: 100;" text="edit">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.7961165048543689">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <FontAwesomeIconView layoutX="-119.0" layoutY="508.0" />
+            <FontAwesomeIconView fill="#2dffea" focusTraversable="true" fontSmoothingType="LCD" glyphName="USER_PLUS" layoutX="81.0" layoutY="151.0" size="30" stroke="SNOW" style="-fx-background-fill: white;" text="" wrappingWidth="29.571428298950195">
+               <effect>
+                  <ColorAdjust brightness="1.0" contrast="-1.0" hue="0.2" saturation="1.0" />
+               </effect>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView glyphName="DOLLAR" layoutX="59.0" layoutY="316.0" size="30" />
+            <JFXTextField fx:id="nametextproducts" labelFloat="true" layoutX="118.0" layoutY="191.0" promptText="name" />
+            <JFXTextField fx:id="pricetextproducts" labelFloat="true" layoutX="114.0" layoutY="281.0" prefHeight="31.0" prefWidth="177.0" promptText="price" />
+            <JFXComboBox fx:id="category_combo" labelFloat="true" layoutX="107.0" layoutY="359.0" prefHeight="31.0" prefWidth="169.0" promptText="category" />
+            <FontAwesomeIconView glyphName="STREET_VIEW" layoutX="57.0" layoutY="226.0" size="30" text="" />
+            <FontAwesomeIconView glyphName="BOOK" layoutX="56.0" layoutY="382.0" size="25" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
